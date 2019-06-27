@@ -35,3 +35,7 @@ For each grocery store within LA city:
   * Draw a circle around that store to denote customers living within easy distance of that store.
   * Color that circle with a color representing a food oasis.
   * Specify background color for all of LA city to be the color of the food desert.
+### Method selected - Grid method
+The shapes method is easier in terms of processing, but only produces a map. It does not give you a list of points which are in the food desert.
+
+The grid method requires more processing, but provides a list of points that are in the food desert.
