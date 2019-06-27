@@ -7,7 +7,7 @@
 | [<img src="photos/ArtinSinani.png" alt="Artin Sinani" width = "128" />](https://github.com/)                     | [<img src="photos/DustinYang.png" width = "128" />](https://github.com/)                          | [<img src="photos/JasonMurphy.png" width = "128" />](https://github.com/)                                   |[<img src="photos/JoshMancuso.png" width = "128" />](https://github.com/)                        |[<img src="photos/LivJohnson.png" width = "128" />](https://github.com/)                        |[<img src="photos/SamirGadkari.png" width = "128" />](https://github.com/)            |
 
 
-We will find the areas of Los Angeles that are food deserts. The United States Department of Agriculture considers homes that are far away from wholesome food as a food desert.
+We find areas in Los Angeles that are food deserts. The United States Department of Agriculture considers homes that are far away from wholesome food as a food desert.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
