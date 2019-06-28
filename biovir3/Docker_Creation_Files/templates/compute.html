@@ -1,0 +1,64 @@
+{% extends "base-coordinates.html" %}
+{% block content %}
+
+<div class="container">
+  <div style="padding: 50px;">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10"><h4 class="text-secondary">Your Location: {{ lat, lon }}</h4></div>
+      <div class="col-sm-1"></div>
+     </div>
+   </div>
+ </div>
+
+{% if stores[0] == [] %}
+ <div class="container">
+   <div style="padding: 20px;">
+     <div class="row">
+       <div class="col-sm-1"></div>
+       <div class="col-sm-10">
+         <h4 class="text-secondary">You are located in a Food Desert</h4>
+       <div class="col-sm-1"></div>
+     </div>
+   </div>
+ </div>
+ {% else %}
+ <div class="container">
+   <div style="padding:20px;">
+     <div class="row">
+       <div class="col-sm-1"></div>
+       <div class="col-sm-10"></div>
+         <h4 class="text-secondary">These grocery stores are nearby:</h4>
+       <div class="col-sm-1"></div>
+     </div>
+   </div>
+ </div>
+ <div class="container">
+   <div style="padding: 20px;">
+     <div class="row">
+       <div class="col-sm-1"></div>
+       <div class="col-sm-5">
+         <h5 class="text-secondary">Business Name</h5>
+           <ul>
+             {% for store in stores[0] %}
+             <li>{{ store }}</li>
+             {% endfor %}
+           </ul>
+        </div>
+       <div class="col-sm-5">
+          <h5 class="text-secondary">Street Address</h5>
+            <ul>
+              {% for store in stores[1] %}
+              <li>{{ store }}</li>
+              {% endfor %}
+            </ul>
+        </div>
+        <div class="col-sm-1"></div>
+      </div>
+    </div>
+  </div>
+ {% endif %}
+
+ <div>
+
+{% endblock %}
