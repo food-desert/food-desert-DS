@@ -7,20 +7,23 @@
     <title>Food Deserts</title>
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="header">
-        <div style="height: 80px; width: 100%; padding-left: 20px; padding-top:20px; padding-right: 0px; margin-right:-20px; margin-left:-20px; background-color :#485366;">
-          <h2 style="color: #ffffff">Food Desert Finder</h2>
-        </div>
+      <div class="container-fluid">
+          <div class="header">
+            <div style="height: 80px; width: 100%; padding-left: 20px; padding-top:20px; padding-right: 0px; margin-right:-20px; margin-left:-20px; background-color :#485366;">
+              <h2><a style="color: #ffffff" href="/">Food Desert Finder</a></h2>
+            </div>
+          </div>
       </div>
-    </div>
     {% block content %}
     <div class="container">
       <div style="padding: 50px;">
         <div class="row">
-          <div class="col"></div>
-          <div class="col"><h4 class="text-secondary">Select City</h4></div>
-          <div class="col">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-6">
+            <h5 class="text-secondary">Food Deserts of Los Angeles County</h5>
+            <img src="{{url_for('static', filename='food-deserts.png')}}" height="320" width="320" /></div>
+          <div class="col-sm-4">
+            <h4 class="text-secondary">Select City</h4>
              <form>
                <select>
                  <option value="Los Angeles">Los Angeles</option>
@@ -28,11 +31,11 @@
                  <option value="Chicago">Chicago</option>
                </select>
              </form>
-           </div>
-           <div class="col"></div>
-         </div>
-       </div>
-     </div>
+          </div>
+           <div class="col-sm-1"></div>
+        </div>
+      </div>
+    </div>
      <div class="container">
        <div style="padding: 30px;">
          <div class="row">
@@ -49,7 +52,7 @@
          <div class="row">
            <div class="col-sm-2"></div>
            <div class="col-sm-4"><h4 class="text-secondary">Enter Coordinates</h4></div>
-           <div class="col-sm-4">
+           <div class="col-sm-3">
               <form action="/compute" method="post">
                <div class="form-group">
                  <label for="address">Latitude:</label>
@@ -61,6 +64,22 @@
               </form>
             </div>
             <div class="col-sm-2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+          <div style="padding: 20px;">
+            <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h5 class="text-secondary">Median Income by Zip Code</h5>
+                <img src="{{url_for('static', filename='income.png')}}" height="300" width="300" />
+              </div>
+              <div class="col-sm-5">
+                <h5 class="text-secondary">Store Density by Zip Code</h5>
+                <img src="{{url_for('static', filename='store-density.png')}}" height="300" width="300" />
+              </div>
+            <div class="col-sm-1"></div>
           </div>
         </div>
       </div>

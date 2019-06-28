@@ -6,9 +6,8 @@ from .functions import *
 
 def create_app():
     app = Flask(__name__)
-    #app.debug=True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-    #app.config['ENV'] = config('ENV')
+    app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
     DB.init_app(app)
 
     @app.route('/')
@@ -27,6 +26,12 @@ def create_app():
        if stores[2].shape[0] != 0:
          df_x, df_y = transform_df(stores[2])
          map = plot_location(df_x, df_y, input_x, input_y)
-       return render_template('compute.html', lat=lat, lon=lon, stores=stores, map=map)
-
+       return render_template('compute.html', lat=lat, lon=lon, stores=stores)
+    @app.after_request
+    # No cacheing for all.
+    @app.after_request
+    def add_header(response):
+        if 'Cache-Control' not in response.headers:
+            response.headers['Cache-Control'] = 'no-store'
+        return response
     return app

@@ -158,4 +158,4 @@ def plot_location(df_x, df_y, input_x, input_y):
     p.circle(x=input_x, y=input_y, size=15, color='red')
     
     # Export file
-    return export_png(p, filename='./food_desert/static/market_location.png')
+    return export_png(p, filename='./food_desert/static/market_location3.png')

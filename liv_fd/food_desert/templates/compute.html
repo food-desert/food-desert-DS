@@ -58,7 +58,15 @@
     </div>
   </div>
  {% endif %}
- <img src="{{url_for('static', filename='market_location.png')}}" />
+ {% if stores[0] != [] %}
+ <div class="container" style="padding: 10px;">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-10"><img src="{{url_for('static', filename='market_location3.png')}}" height="800" width="800"></div>
+      <div class="col-sm-1">
+    </div>
+  </div>
+  {% endif %}
  <div>
 
 {% endblock %}
