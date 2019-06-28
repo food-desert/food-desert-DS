@@ -1,0 +1,33 @@
+{% extends "base-coordinates.html" %}
+{% block content %}
+
+<div>
+  <h3>Coordinates: "{{ lat, lon }}"</h3>
+</div>
+<h3>
+  {% if stores[0] == [] %}
+  <h4>You are located in a Food Desert</h4>
+  {% else %}
+  <h4>These grocery stores are nearby:</h4>
+  <div>
+    <h3>Business</h3>
+    <ul>
+      {% for store in stores[0] %}
+      <p>{{ store }}</p>
+      {% endfor %}
+    </ul>
+
+  </div>
+  <div>
+    <h3>Street Address</h3>
+    <ul>
+      {% for store in stores[1] %}
+      <p>{{ store }}</p>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  <img src="{{url_for('static', filename='market_location.png')}}" />
+
+</div>
+
+{% endblock %}
